@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <SplitPane dividerPositions="0.5" layoutX="326.0" layoutY="182.0" prefHeight="700.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" VBox.vgrow="ALWAYS">
+              <items>
+                <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                     <children>
+                        <TableView layoutX="209.0" layoutY="163.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="698.0" prefWidth="596.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn prefWidth="75.0" text="ID" />
+                            <TableColumn prefWidth="107.0" text="Make" />
+                              <TableColumn prefWidth="131.0" text="Model" />
+                              <TableColumn prefWidth="75.0" text="Year" />
+                              <TableColumn prefWidth="75.0" text="License" />
+                          </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+                <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                     <children>
+                        <TableView layoutX="115.0" layoutY="224.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="698.0" prefWidth="596.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn minWidth="200.0" prefWidth="500.0" text="Maintenance" />
+                            <TableColumn prefWidth="210.0" text="Interval" />
+                              <TableColumn prefWidth="87.0" text="Due Date" />
+                              <TableColumn prefWidth="75.0" text="Completed" />
+                          </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
+         </children>
+      </VBox>
+      <HBox layoutX="72.0" layoutY="665.0" prefHeight="35.0" prefWidth="356.0" spacing="25.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="72.0">
+         <children>
+            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="97.0" text="New Vehicle" />
+            <Button mnemonicParsing="false" text="Edit Vehicle" />
+            <Button mnemonicParsing="false" text="Delete Vehicle" />
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </HBox>
+      <HBox layoutX="742.0" layoutY="665.0" prefHeight="35.0" prefWidth="418.0" spacing="25.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="40.0">
+         <children>
+            <Button mnemonicParsing="false" text="Add Maintenance" />
+            <Button mnemonicParsing="false" text="Edit Maintenance" />
+            <Button mnemonicParsing="false" text="Delete Maintenance" />
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </HBox>
+   </children>
+</AnchorPane>
