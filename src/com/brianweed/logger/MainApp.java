@@ -2,7 +2,11 @@ package com.brianweed.logger;
 
 import java.io.IOException;
 
+import com.brianweed.logger.model.Vehicle;
+import com.brianweed.logger.view.VehicleOverviewController;
 import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
@@ -14,7 +18,22 @@ public class MainApp extends Application {
 
     private Stage primaryStage;
     private BorderPane rootLayout;
+    private ObservableList<Vehicle> vehicleData = FXCollections.observableArrayList();
 
+    public MainApp(){
+        vehicleData.add(new Vehicle("55","Toyota"));
+        vehicleData.add(new Vehicle("1", "Audi"));
+        vehicleData.add(new Vehicle("2", "Ford"));
+        vehicleData.add(new Vehicle("3","Lincoln"));
+    }
+
+    /**
+     * Returns the data as an observable list of Vehicles.
+     * @return
+     */
+    public ObservableList<Vehicle> getVehicleData() {
+        return vehicleData;
+    }
     @Override
     public void start(Stage primaryStage) {
         this.primaryStage = primaryStage;
@@ -55,6 +74,11 @@ public class MainApp extends Application {
 
             // Set person overview into the center of root layout.
             rootLayout.setCenter(vehicleOverview);
+
+            // Give the controller access to the main app.
+            VehicleOverviewController controller = loader.getController();
+            controller.setMainApp(this);
+
         } catch (IOException e) {
             e.printStackTrace();
         }
