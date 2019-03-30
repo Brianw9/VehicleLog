@@ -13,7 +13,7 @@ public class VehicleOverviewController {
     private TableView<Vehicle> vehicleTable;
 
     @FXML
-    private TableView<?> maintTable;
+    private TableView<Vehicle> maintTable;
 
     @FXML
     private TableColumn<Vehicle, String> yearColumn;
@@ -22,10 +22,17 @@ public class VehicleOverviewController {
     private TableColumn<Vehicle, String> licenseColumn;
 
     @FXML
-    private Button editVehicleButton;
+    private TableColumn<Vehicle, String> makeColumn;
 
     @FXML
-    private TableColumn<?, ?> completedColumn;
+    private TableColumn<Vehicle, String> modelColumn;
+
+    @FXML
+    private TableColumn<Vehicle, String> idColumn;
+
+    @FXML
+    private Button editVehicleButton;
+
 
     @FXML
     private Button deleteVehicleButton;
@@ -37,16 +44,13 @@ public class VehicleOverviewController {
     private TableColumn<?, ?> maintColumn;
 
     @FXML
-    private TableColumn<Vehicle, String> makeColumn;
-
-    @FXML
     private TableColumn<?, ?> intervalColumn;
 
     @FXML
-    private TableColumn<Vehicle, String> modelColumn;
+    private TableColumn<?, ?> dueDateColumn;
 
     @FXML
-    private TableColumn<?, ?> dueDateColumn;
+    private TableColumn<?, ?> completedColumn;
 
     @FXML
     private Button newVehicleButton;
@@ -57,14 +61,27 @@ public class VehicleOverviewController {
     @FXML
     private Button deleteMaintButton;
 
-    @FXML
-    private TableColumn<Vehicle, String> idColumn;
-
     // Reference to the main application.
     private MainApp mainApp;
 
     //Constructor
     public VehicleOverviewController() {
+    }
+    /**
+     * Fills all text fields to show details about the person.
+     * If the specified person is null, all text fields are cleared.
+     *
+     * @param vehicle the vehicle or null
+     */
+    private void showVehicleDetails(Vehicle vehicle) {
+        if (vehicle != null) {
+            // Fill the labels with info from the vehicle object.
+            maintTable.setItems(mainApp.getMaintData);
+
+        } else {
+            // Vehicle is null, remove all the text.
+            maintTable.setItems(null);
+        }
     }
 
     /**
@@ -76,9 +93,11 @@ public class VehicleOverviewController {
         // Initialize the person table with the two columns.
         idColumn.setCellValueFactory(cellData -> cellData.getValue().IDProperty());
         makeColumn.setCellValueFactory(cellData -> cellData.getValue().makeProperty());
-        modelColumn.setCellValueFactory(celldata -> celldata.getValue().modelProperty());
-        yearColumn.setCellValueFactory(celldata -> celldata.getValue().yearProperty());
-        licenseColumn.setCellValueFactory(celldata -> celldata.getValue().licenseProperty());
+        modelColumn.setCellValueFactory(cellData -> cellData.getValue().modelProperty());
+        yearColumn.setCellValueFactory(cellData -> cellData.getValue().yearProperty());
+        licenseColumn.setCellValueFactory(cellData -> cellData.getValue().licenseProperty());
+
+        maintTable.setRowFactory();
     }
     /**
      * Is called by the main application to give a reference back to itself.
