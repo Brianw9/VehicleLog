@@ -13,17 +13,16 @@ public class Vehicle {
 
     //default constructor
     public Vehicle(){
-        this(null, null);
+        this(null, null, null, null, null);
     }
 
-    public Vehicle(String ID, String make){
+    public Vehicle(String ID, String make, String model, String year, String license){
         this.ID = new SimpleStringProperty(ID);
         this.make = new SimpleStringProperty(make);
 
-        //some prefilled data for easier testing
-        this.model = new SimpleStringProperty("Tundra");
-        this.year = new SimpleStringProperty("2009");
-        this.license = new SimpleStringProperty("L65-PDQ");
+        this.model = new SimpleStringProperty(model);
+        this.year = new SimpleStringProperty(year);
+        this.license = new SimpleStringProperty(license);
     }
 
     public String getID() {

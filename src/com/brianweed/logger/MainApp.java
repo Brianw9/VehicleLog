@@ -21,10 +21,10 @@ public class MainApp extends Application {
     private ObservableList<Vehicle> vehicleData = FXCollections.observableArrayList();
 
     public MainApp(){
-        vehicleData.add(new Vehicle("55","Toyota"));
-        vehicleData.add(new Vehicle("1", "Audi"));
-        vehicleData.add(new Vehicle("2", "Ford"));
-        vehicleData.add(new Vehicle("3","Lincoln"));
+        vehicleData.add(new Vehicle("55","Toyota", "Tundra", "2009", "L65-PDQ"));
+        vehicleData.add(new Vehicle("1", "Audi", "TT", "1998","2fast4u"));
+        vehicleData.add(new Vehicle("2", "Ford", "Mustang", "1234", "555-555"));
+        vehicleData.add(new Vehicle("3","Lincoln", "Navigator", "55555", "55378008"));
     }
 
     /**
@@ -67,12 +67,12 @@ public class MainApp extends Application {
      */
     public void showVehicleOverview() {
         try {
-            // Load person overview.
+            // Load vehicle overview.
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MainApp.class.getResource("view/VehicleOverview.fxml"));
             AnchorPane vehicleOverview = (AnchorPane) loader.load();
 
-            // Set person overview into the center of root layout.
+            // Set vehicle overview into the center of root layout.
             rootLayout.setCenter(vehicleOverview);
 
             // Give the controller access to the main app.

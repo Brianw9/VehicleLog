@@ -73,16 +73,16 @@ public class VehicleOverviewController {
      *
      * @param vehicle the vehicle or null
      */
-    private void showVehicleDetails(Vehicle vehicle) {
-        if (vehicle != null) {
-            // Fill the labels with info from the vehicle object.
-            maintTable.setItems(mainApp.getMaintData);
-
-        } else {
-            // Vehicle is null, remove all the text.
-            maintTable.setItems(null);
-        }
-    }
+//    private void showVehicleDetails(Vehicle vehicle) {
+//        if (vehicle != null) {
+//            // Fill the labels with info from the vehicle object.
+//            maintTable.setItems(mainApp.getMaintData);
+//
+//        } else {
+//            // Vehicle is null, remove all the text.
+//            maintTable.setItems(null);
+//        }
+//    }
 
     /**
      * Initializes the controller class. This method is automatically called
@@ -90,14 +90,14 @@ public class VehicleOverviewController {
      */
     @FXML
     private void initialize() {
-        // Initialize the person table with the two columns.
+        // Initialize the vehicle table with the five columns.
         idColumn.setCellValueFactory(cellData -> cellData.getValue().IDProperty());
         makeColumn.setCellValueFactory(cellData -> cellData.getValue().makeProperty());
         modelColumn.setCellValueFactory(cellData -> cellData.getValue().modelProperty());
         yearColumn.setCellValueFactory(cellData -> cellData.getValue().yearProperty());
         licenseColumn.setCellValueFactory(cellData -> cellData.getValue().licenseProperty());
 
-        maintTable.setRowFactory();
+//        maintTable.setRowFactory();
     }
     /**
      * Is called by the main application to give a reference back to itself.
