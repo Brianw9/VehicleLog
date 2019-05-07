@@ -1,8 +1,10 @@
-package com.brianweed.logger.model;
+        package com.brianweed.logger.model;
 
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+
+import java.util.ArrayList;
 
 public class Vehicle {
     private final StringProperty ID;
@@ -10,6 +12,7 @@ public class Vehicle {
     private final StringProperty model;
     private final StringProperty year;
     private final StringProperty license;
+    private final ArrayList<StringProperty> maintenanceList = new ArrayList<>(5);
 
     //default constructor
     public Vehicle(){
@@ -19,12 +22,10 @@ public class Vehicle {
     public Vehicle(String ID, String make, String model, String year, String license){
         this.ID = new SimpleStringProperty(ID);
         this.make = new SimpleStringProperty(make);
-
         this.model = new SimpleStringProperty(model);
         this.year = new SimpleStringProperty(year);
         this.license = new SimpleStringProperty(license);
     }
-
     public String getID() {
         return ID.get();
     }
@@ -83,5 +84,11 @@ public class Vehicle {
 
     public void setLicense(String license) {
         this.license.set(license);
+    }
+    public void setMaintenanceList(StringProperty newVar){
+        this.maintenanceList.add(newVar);
+    }
+    private ArrayList<StringProperty> maintenanceListProperty(){
+        return maintenanceList;
     }
 }
