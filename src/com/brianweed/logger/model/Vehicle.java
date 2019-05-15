@@ -12,7 +12,10 @@ public class Vehicle {
     private final StringProperty model;
     private final StringProperty year;
     private final StringProperty license;
-    private final ArrayList<StringProperty> maintenanceList = new ArrayList<>(5);
+    private final StringProperty upcomingMaint;
+    private final StringProperty dueDate;
+    private final StringProperty miles;
+    private final StringProperty complete;
 
     //default constructor
     public Vehicle(){
@@ -25,6 +28,11 @@ public class Vehicle {
         this.model = new SimpleStringProperty(model);
         this.year = new SimpleStringProperty(year);
         this.license = new SimpleStringProperty(license);
+        this.upcomingMaint = new SimpleStringProperty();
+        this.dueDate = new SimpleStringProperty();
+        this.miles = new SimpleStringProperty();
+        this.complete = new SimpleStringProperty();
+
     }
     public String getID() {
         return ID.get();
@@ -85,10 +93,53 @@ public class Vehicle {
     public void setLicense(String license) {
         this.license.set(license);
     }
-    public void setMaintenanceList(StringProperty newVar){
-        this.maintenanceList.add(newVar);
+
+    public String getUpcomingMaint() {
+        return upcomingMaint.get();
     }
-    private ArrayList<StringProperty> maintenanceListProperty(){
-        return maintenanceList;
+
+    public StringProperty upcomingMaintProperty() {
+        return upcomingMaint;
     }
+
+    public void setUpcomingMaint(String upcomingMaint) {
+        this.upcomingMaint.set(upcomingMaint);
+    }
+
+    public String getDueDate() {
+        return dueDate.get();
+    }
+
+    public StringProperty dueDateProperty() {
+        return dueDate;
+    }
+
+    public void setDueDate(String dueDate) {
+        this.dueDate.set(dueDate);
+    }
+
+    public String getMiles() {
+        return miles.get();
+    }
+
+    public StringProperty milesProperty() {
+        return miles;
+    }
+
+    public void setMiles(String miles) {
+        this.miles.set(miles);
+    }
+
+    public String getComplete() {
+        return complete.get();
+    }
+
+    public StringProperty completeProperty() {
+        return complete;
+    }
+
+    public void setComplete(String complete) {
+        this.complete.set(complete);
+    }
+
 }
