@@ -96,11 +96,11 @@ public class MainApp extends Application {
     }
 
     /**
-     * Opens a dialog to edit details for the specified person. If the user
-     * clicks OK, the changes are saved into the provided person object and true
+     * Opens a dialog to edit details for the specified vehicle. If the user
+     * clicks OK, the changes are saved into the provided vehicle object and true
      * is returned.
      *
-     * @param person the person object to be edited
+     * @param vehicle the vehicle object to be edited
      * @return true if the user clicked OK, false otherwise.
      */
     public boolean showVehicleEditDialog(Vehicle vehicle) {
@@ -118,7 +118,7 @@ public class MainApp extends Application {
             Scene scene = new Scene(page);
             dialogStage.setScene(scene);
 
-            // Set the person into the controller.
+            // Set the vehicle into the controller.
             VehicleEditDialogController controller = loader.getController();
             controller.setDialogStage(dialogStage);
             controller.setVehicle(vehicle);
